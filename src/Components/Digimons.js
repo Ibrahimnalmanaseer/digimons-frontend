@@ -47,7 +47,7 @@ class Digimons extends React.Component{
         event.email=user.email
         console.log(event)
         axios
-        .post('http://54.82.49.251:8000/api/v1/digimons/',event)
+        .post('http://52.91.116.114:8000/api/v1/digimons/',event)
         .then((re)=>{
 
             console.log("Response status:", re.status)
