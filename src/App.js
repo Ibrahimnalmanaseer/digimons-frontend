@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react';
+import Digimons from './Components/Digimons'
+import FavDigimons from './Components/FavDigimons';
+import Header from './Components/Header';
+import WelcomePage from './Components/WelcomePage';
+import { withAuth0 } from '@auth0/auth0-react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+
+class App extends React.Component{
+  
+  render(){
+  
+    const { isAuthenticated } = this.props.auth0;
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+      <>
+        <Router>
+        <Header/>
+        
+        <Routes>
+
+          
+            {isAuthenticated?<><Route 
+                exact path="/"
+                element={<Digimons/>}
+              >
+              </Route>
+              <Route 
+                exact path="/mydigimons"
+                element={<FavDigimons/>}
+              >
+              </Route></>:<Route exact path="/"
+                    element={<WelcomePage/>}         >
+          
+        
+      </Route>   }
+      
+
+              </Routes>
+             
+          
+        </Router>
+      
+      
+      </>
+    
+        
+    
+    )
+  }
+
 }
 
-export default App;
+export default withAuth0(App);

@@ -1,0 +1,40 @@
+#header-logo {
+    width: 50px;
+    
+}
+
+#navitems {
+    color: #004aac;
+}
+
+#navitems:hover {
+    color: #092953;
+    font-weight: 400;
+}
+
+#navigation {
+    background-color: white;
+    border-bottom: 1px solid #004aac;
+    padding-bottom: 5px;
+  
+}
+
+#logo {
+    letter-spacing: 5px;
+    font-weight: 600;
+    color: #004aac;
+}
+
+#logo:hover {
+    letter-spacing: 5px;
+    font-weight: 600;
+    color: #092953;
+}
+
+#items {
+    gap: 20px;
+}
+
+.special {
+    margin-right: 25px;
+}
