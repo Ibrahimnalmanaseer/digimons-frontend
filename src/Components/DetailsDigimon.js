@@ -23,7 +23,7 @@ class DetailsDigimon extends React.Component {
 
     //update my favourite Digimons in database
     await axios
-          .put(`http://52.91.116.114:8000/api/v1/digimons/${this.props.digimonInfo.id}`,digimonInfo)
+          .put(`http://54.82.49.251:8000/api/v1/digimons/${this.props.digimonInfo.id}`,digimonInfo)
           .then((result) => {
             console.log("Response status Update:", result.status);
             
@@ -36,7 +36,7 @@ class DetailsDigimon extends React.Component {
 
       //Get all my favourite Digimons
     axios
-          .get(`http://52.91.116.114:8000/api/v1/digimons/?email=${user.email}`)
+          .get(`http://54.82.49.251:8000/api/v1/digimons/?email=${user.email}`)
           .then((result)=>{
 
               

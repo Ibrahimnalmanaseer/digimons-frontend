@@ -31,7 +31,7 @@ class FavDigimons extends React.Component{
 
         // send a request to get user's fav digimons
         axios
-        .get(`http://52.91.116.114:8000/api/v1/digimons/?email=${user.email}`)
+        .get(`http://54.82.49.251:8000/api/v1/digimons/?email=${user.email}`)
         .then((result)=>{
             this.setState({
                 myDigimons:result.data
@@ -54,7 +54,7 @@ class FavDigimons extends React.Component{
 
 
         axios
-          .delete(`http://52.91.116.114:8000/api/v1/digimons/${id}`)
+          .delete(`http://54.82.49.251:8000/api/v1/digimons/${id}`)
           .then((result) => {
             console.log("Response status:", result.status);
             
